@@ -41,9 +41,11 @@ void enterTeamData (FRCTeam * tptr){
     cout << "Matches Played: " << tptr->matchesPlayed << endl;
     tptr -> performace = new TeamPerformace[tptr->matchesPlayed];
     for (int i = 0; i < tptr->matchesPlayed; i++){
-        cout << "Match Number: " << tptr->performace->matchNumber << endl;
-        cout << "Points scored: " << tptr->performace->pointsScored << endl;
-        cout << "Team's Cycle Time" << tptr->performace->cycleTime << endl;
+        tptr->performace[i].matchNumber = i;
+        cout << "Points scored for match number " << i << ":";
+        cin >> tptr->performace[i].pointsScored;
+        cout << "Team's Cycle Time for match number " << i << ":";
+        cin >> tptr->performace[i].cycleTime;
     }
     cin.ignore();
     cout << endl << endl;
