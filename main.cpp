@@ -3,13 +3,20 @@
 #include <iostream>
 using namespace std;
 
-// Function Prototypes:
+const int TEAM_AMOUNT = 4, TEAM_MEMBERS = 6;
+
+struct Team {
+    int teamNumber;
+    string teamName;
+    string *memberNames;
+};
 
 /**
  * @brief - Description of main
  * @return 
 */
 int main() {
+    Team *teamList = new Team[TEAM_AMOUNT];
     return 0;
 }
 
