@@ -26,18 +26,26 @@ void enterTeamData(FRCTeam*);
 */
 int main() {
     FRCTeam *teamList = new FRCTeam[TEAM_AMOUNT];
+
+    for (int i = 0; i < TEAM_AMOUNT; i++){
+        enterTeamData(&teamList[i]);
+    }
     return 0;
 }
 
 void enterTeamData (FRCTeam * tptr){
     static int tmNbr = 1;
+    cout << "Enter the data for team " << tmNbr << "on the list" << endl;
     cout << "Team Name: " << tptr->teamName << endl;
     cout << "Team Number: " << tptr->teamNumber << endl;
     cout << "Matches Played: " << tptr->matchesPlayed << endl;
     tptr -> performace = new TeamPerformace[tptr->matchesPlayed];
     for (int i = 0; i < tptr->matchesPlayed; i++){
+        cout << "Match Number: " << tptr->performace->matchNumber << endl;
         cout << "Points scored: " << tptr->performace->pointsScored << endl;
-        cout << "Team's Cycle Time"
+        cout << "Team's Cycle Time" << tptr->performace->cycleTime << endl;
     }
-
+    cin.ignore();
+    cout << endl << endl;
+    tmNbr++;
 }
