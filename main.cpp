@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-const int TEAM_AMOUNT = 4, MATCH_AMOUNT = 3;
+const int TEAM_AMOUNT = 4;
 
 struct TeamPerformace {
     double pointsScored;
@@ -13,6 +13,7 @@ struct TeamPerformace {
 struct FRCTeam {
     int teamNumber;
     string teamName;
+    int matchesPlayed;
     double *performace;
 };
 
@@ -27,4 +28,8 @@ int main() {
     return 0;
 }
 
-void enterTeamData (FRCTeam * tptr){}
+void enterTeamData (FRCTeam * tptr){
+    static int tmNbr = 1;
+    cout << "Team Name: ";
+
+}
