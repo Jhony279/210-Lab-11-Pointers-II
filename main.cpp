@@ -3,25 +3,28 @@
 #include <iostream>
 using namespace std;
 
-const int TEAM_AMOUNT = 4;
+const int TEAM_AMOUNT = 4, MATCH_AMOUNT = 3;
 
+struct TeamPerformace {
+    double pointsScored;
+    double cycleTime;
+};
 
 struct FRCTeam {
     int teamNumber;
     string teamName;
-    int matchesPlayed;
+    double *performace;
 };
+
+void enterTeamData(FRCTeam*);
 
 /**
  * @brief - Description of main
  * @return 
 */
 int main() {
-    // Team *teamList = new Team[TEAM_AMOUNT];
+    FRCTeam *teamList = new FRCTeam[TEAM_AMOUNT];
     return 0;
 }
 
-// Function Definitions:
-
-// Reminder lines must be 80 characters or less, no more than one empty line, no magic numbers,
-// and Reminder to comment code where neccessary.
+void enterTeamData (FRCTeam * tptr){}
