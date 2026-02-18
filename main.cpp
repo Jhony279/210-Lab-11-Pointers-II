@@ -6,7 +6,7 @@ using namespace std;
 const int TEAM_AMOUNT = 4;
 
 struct TeamPerformace {
-    double pointsScored;
+    int pointsScored;
     double cycleTime;
     int matchNumber;
 };
@@ -35,16 +35,18 @@ int main() {
 
 void enterTeamData (FRCTeam * tptr){
     static int tmNbr = 1;
-    cout << "Enter the data for team " << tmNbr << "on the list" << endl;
-    cout << "Team Name: " << tptr->teamName << endl;
-    cout << "Team Number: " << tptr->teamNumber << endl;
-    cout << "Matches Played: " << tptr->matchesPlayed << endl;
+    cout << "Enter the data for team " << tmNbr << " on the list" << endl;
+    cout << "Team Name: ";
+    getline(cin, tptr->teamName);
+    cout << "Team Number: "; cin >> tptr->teamNumber;
+    cout << "Matches Played: "; cin >> tptr->matchesPlayed;
     tptr -> performace = new TeamPerformace[tptr->matchesPlayed];
+
     for (int i = 0; i < tptr->matchesPlayed; i++){
         tptr->performace[i].matchNumber = i;
-        cout << "Points scored for match number " << i << ":";
+        cout << "Points scored for match number " << i + 1<< ": ";
         cin >> tptr->performace[i].pointsScored;
-        cout << "Team's Cycle Time for match number " << i << ":";
+        cout << "Team's Cycle Time:";
         cin >> tptr->performace[i].cycleTime;
     }
     cin.ignore();
