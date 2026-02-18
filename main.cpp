@@ -3,12 +3,13 @@
 #include <iostream>
 using namespace std;
 
-const int TEAM_AMOUNT = 4, TEAM_MEMBERS = 6;
+const int TEAM_AMOUNT = 4;
 
-struct Team {
+
+struct FRCTeam {
     int teamNumber;
     string teamName;
-    string *memberNames;
+    int matchesPlayed;
 };
 
 /**
@@ -16,7 +17,7 @@ struct Team {
  * @return 
 */
 int main() {
-    Team *teamList = new Team[TEAM_AMOUNT];
+    // Team *teamList = new Team[TEAM_AMOUNT];
     return 0;
 }
 
