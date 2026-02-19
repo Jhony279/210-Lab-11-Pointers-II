@@ -1,6 +1,8 @@
 // COMSC-210 | Lab 11 | Johnathan Perez Baltazar
 
 #include <iostream>
+#include <ios>
+#include <iomanip>
 using namespace std;
 
 const int TEAM_AMOUNT = 4;
@@ -68,4 +70,13 @@ void displayTeamInfo(FRCTeam *tptr){
     cout << "--- Team " << tptr->teamNumber << " summary ---";
     cout << "\nName: " << tptr->teamName;
     cout << "\nTeam #: " << tptr->teamNumber;
+    cout << "\nMatches played: " << tptr->matchesPlayed << endl;
+
+    static int prtSpacing = 4;
+    for (int i = 0; i < tptr->matchesPlayed; i++){
+        cout << "Performance for match " << i + 1 << endl;
+        cout << setw(prtSpacing) << "Points scored: " 
+            << tptr->performace[i].pointsScored << endl;
+        // cout << setw(prtSpacing) << ""
+    }
 }
