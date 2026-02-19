@@ -5,7 +5,7 @@
 #include <iomanip>
 using namespace std;
 
-const int TEAM_AMOUNT = 4;
+const int TEAM_AMOUNT = 2;
 
 struct TeamPerformace {
     int pointsScored;
@@ -13,6 +13,9 @@ struct TeamPerformace {
     int matchNumber;
 };
 
+/**
+ * @brief A struct that holds information on the team the user is scouting
+*/
 struct FRCTeam {
     int teamNumber;
     string teamName;
@@ -69,15 +72,15 @@ void enterTeamData(FRCTeam *tptr){
 void displayTeamInfo(FRCTeam *tptr){
     cout << "--- Team " << tptr->teamNumber << " summary ---";
     cout << "\nName: " << tptr->teamName;
-    cout << "\nTeam #: " << tptr->teamNumber;
+    cout << "\nTeam# : " << tptr->teamNumber;
     cout << "\nMatches played: " << tptr->matchesPlayed << endl;
 
     static int prtSpacing = 4;
     for (int i = 0; i < tptr->matchesPlayed; i++){
-        cout << "Performance for match " << i + 1 << endl;
-        cout << setw(prtSpacing) << "Points scored: " 
+        cout << " -Performance for match " << i + 1 << ": " << endl;
+        cout << "   Points scored: " 
             << tptr->performace[i].pointsScored << endl;
-        cout << setw(prtSpacing) << "Cycle Time: "
+        cout << "   Cycle Time: "
             << tptr->performace[i].cycleTime << endl;
     }
     cout << endl << endl;
