@@ -40,7 +40,7 @@ int main() {
     }
 
     for (int i = 0; i < TEAM_AMOUNT; i++){
-
+        displayTeamInfo(&teamList[i]);
     }
     return 0;
 }
@@ -56,9 +56,9 @@ void enterTeamData(FRCTeam *tptr){
 
     for (int i = 0; i < tptr->matchesPlayed; i++){
         tptr->performace[i].matchNumber = i;
-        cout << "Points scored for match number " << i + 1<< ": ";
+        cout << "\nPoints scored for match " << i + 1<< ": ";
         cin >> tptr->performace[i].pointsScored;
-        cout << "Team's Cycle Time:";
+        cout << "Team's Cycle Time: ";
         cin >> tptr->performace[i].cycleTime;
     }
     cin.ignore();
@@ -77,6 +77,8 @@ void displayTeamInfo(FRCTeam *tptr){
         cout << "Performance for match " << i + 1 << endl;
         cout << setw(prtSpacing) << "Points scored: " 
             << tptr->performace[i].pointsScored << endl;
-        // cout << setw(prtSpacing) << ""
+        cout << setw(prtSpacing) << "Cycle Time: "
+            << tptr->performace[i].cycleTime << endl;
     }
+    cout << endl << endl;
 }
