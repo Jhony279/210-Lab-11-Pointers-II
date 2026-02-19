@@ -8,19 +8,19 @@ using namespace std;
 const int TEAM_AMOUNT = 2;
 
 struct TeamPerformace {
-    int pointsScored;
-    double cycleTime;
-    int matchNumber;
+    int pointsScored;   // Amount of Points scored by the team
+    double cycleTime;   // Average amount of time in between each scored point
+    int matchNumber;    // The match in which they got this performance
 };
 
 /**
  * @brief A struct that holds information on the team the user is scouting
 */
 struct FRCTeam {
-    int teamNumber;
-    string teamName;
-    int matchesPlayed;
-    TeamPerformace *performace;
+    int teamNumber;     // The team's #
+    string teamName;    // Team's name
+    int matchesPlayed;  // # of matches played
+    TeamPerformace *performace; // List of team's performace per match
     
     ~FRCTeam() {
         if (performace) 
