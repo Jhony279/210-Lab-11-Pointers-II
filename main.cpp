@@ -16,13 +16,19 @@ struct FRCTeam {
     string teamName;
     int matchesPlayed;
     TeamPerformace *performace;
+    
+    ~FRCTeam() {
+        if (performace) 
+            delete [] performace;
+        performace = nullptr;
+    }
 };
 
 void enterTeamData(FRCTeam*);
+void displayTeamInfo(FRCTeam*);
 
 /**
  * @brief - Description of main
- * @return 
 */
 int main() {
     FRCTeam *teamList = new FRCTeam[TEAM_AMOUNT];
@@ -30,10 +36,14 @@ int main() {
     for (int i = 0; i < TEAM_AMOUNT; i++){
         enterTeamData(&teamList[i]);
     }
+
+    for (int i = 0; i < TEAM_AMOUNT; i++){
+
+    }
     return 0;
 }
 
-void enterTeamData (FRCTeam * tptr){
+void enterTeamData (FRCTeam *tptr){
     static int tmNbr = 1;
     cout << "Enter the data for team " << tmNbr << " on the list" << endl;
     cout << "Team Name: ";
@@ -52,4 +62,8 @@ void enterTeamData (FRCTeam * tptr){
     cin.ignore();
     cout << endl << endl;
     tmNbr++;
+}
+
+void displayTeamInfo(FRCTeam *tptr){
+    
 }
