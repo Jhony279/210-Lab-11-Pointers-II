@@ -43,7 +43,7 @@ int main() {
     return 0;
 }
 
-void enterTeamData (FRCTeam *tptr){
+void enterTeamData(FRCTeam *tptr){
     static int tmNbr = 1;
     cout << "Enter the data for team " << tmNbr << " on the list" << endl;
     cout << "Team Name: ";
@@ -65,5 +65,7 @@ void enterTeamData (FRCTeam *tptr){
 }
 
 void displayTeamInfo(FRCTeam *tptr){
-    
+    cout << "--- Team " << tptr->teamNumber << " summary ---";
+    cout << "\nName: " << tptr->teamName;
+    cout << "\nTeam #: " << tptr->teamNumber;
 }
