@@ -1,5 +1,12 @@
 // COMSC-210 | Lab 11 | Johnathan Perez Baltazar
 
+/** <Description of code>: This program creates a struct to hold data on a FRC team, then creates a list 
+ *  of teams and allows the user to enter the data for each team and display it It,
+ *  meant to simulate the process of scouting teams in FRC, where you would want
+ *  to keep track of how each team performed in each match they played, and then be
+ *  able to see the data when needed
+*/
+
 #include <iostream>
 #include <ios>
 #include <iomanip>
